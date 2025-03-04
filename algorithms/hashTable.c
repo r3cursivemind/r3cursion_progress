@@ -28,13 +28,32 @@ void printTable() {
     }
 }
 
+void findPrice(const char *name) {
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        if (names[i] != NULL && strcmp(names[i], name) == 0) {
+            printf("%s = %.2f$\n", name, prices[i]);
+            return;
+        }
+    }
+    printf("Product '%s' not found.\n", name);
+}
+
 int main() {
     for (int i = 0; i < TABLE_SIZE; i++) {
         names[i] = NULL;
     }
+
     hashTable(0, "avocado", 1.49);
     hashTable(0, "apple", 0.67);
     hashTable(0, "milk", 1.49);
+
     printTable();
+
+    char query[20];
+    printf("\nEnter product name to search: ");
+    scanf("%19s", query);
+
+    findPrice(query);
+
     return 0;
 }
