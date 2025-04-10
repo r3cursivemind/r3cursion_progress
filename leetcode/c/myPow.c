@@ -33,5 +33,10 @@ int main() {
 
   printf("%f\n", myPow(x, n));
 
+  x = 2.0;
+  n = 0;
+
+  printf("%f\n", myPow(x, n));
+
   return 0;
 }
