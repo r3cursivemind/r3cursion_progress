@@ -3,7 +3,6 @@
 double myPow(double x, int n) {
   double a = x;
   if (n > 0) {
-    double a = x;
     for (int i = 1; i < n; i++) {
       x *= a;
     }
